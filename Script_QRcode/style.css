@@ -1,0 +1,47 @@
+.button {
+  display: block; /* ブロック要素として表示 */
+  width: 120px; /* 幅を120pxに設定 */
+  margin: 0 auto; /* 中央揃え */
+  padding: 10px; /* 内側の余白 */
+  border-radius: 8px; /* 角丸をつける */
+  box-shadow: 0 4px 8px rgba(222, 255, 229, 0.5); /* 柔らかい影を追加 */
+  background-color: #0aba04a8; /* 緑系の背景色 */
+  color: #fff; /* テキストの色を白に */
+  text-align: center; /* 文字を中央揃え */
+  text-decoration: none; /* 下線を消す */
+  transition: all ease 0.2s; /* すべてのスタイル変更を滑らかに */
+  position: relative; /* 擬似要素の基準点として利用 */
+  overflow: hidden; /* 擬似要素がボタン外に出ないようにする */
+}
+
+.button::before {
+  content: ""; /* 擬似要素として空のコンテンツ */
+  position: absolute; /* ボタン内に絶対配置 */
+  top: 50%;
+  left: 50%;
+  width: 100px; /* 初期の光の幅 */
+  height: 100px; /* 初期の光の高さ */
+  background: rgba(255, 255, 255, 0.4); /* 半透明の白色（光の色） */
+  border-radius: 50%; /* 円形にする */
+  transform: scale(0); /* 初期状態は0倍の大きさ */
+  opacity: 0; /* 透明 */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* 拡大と透明度を滑らかにアニメーション */
+  pointer-events: none; /* 擬似要素をクリック対象外にする */
+}
+
+.button:hover::before {
+  transform: scale(4); /* 光を4倍の大きさに拡大 */
+  opacity: 1; /* 透明度を100%にして光を見せる */
+}
+
+.button:hover {
+  background-color: #abe6b4; /* ホバー時に暗い緑色に変更 */
+}
+
+
+@media screen and (min-width: 500px) {
+  .button {
+    width: 150px; /* 幅を150pxに変更 */
+    padding: 16px; /* 内側の余白を広くする */
+  }
+}
