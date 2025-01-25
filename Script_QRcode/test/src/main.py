@@ -18,7 +18,7 @@ def task():
   base64_qr=base64.b64encode(img_data).decode("utf-8")
   
   # HTML imgタグ用のデータ
-  img_url=base64_qr
+  img_url=f"data:image/png;base64,{base64_qr}"
   print(img_url)# 実際に埋め込む対象のもの
 
 # 6秒ごとにtaskを実行
