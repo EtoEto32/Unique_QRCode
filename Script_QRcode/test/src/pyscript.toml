@@ -1,3 +1,0 @@
-name="Unique_QRcode"
-description="This is a technical verification regarding URLs."
-package=["schedule","pillow","pypng","PyQRcode","pip","time","ramdom"]

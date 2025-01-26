@@ -1,0 +1,8 @@
+schedule
+Pillow
+pypng
+pyQRcode
+streamlit
+streamlit-option-menu
+streamlit
+streamlit-authenticator

@@ -1,0 +1,16 @@
+[project]
+name = "Unique_QRcode"
+description = "This is a technical verification regarding URLs."
+version = "0.1.0"
+dependencies = [
+    "schedule",
+    "pillow",
+    "pypng",
+    "pyqrcode",
+    "pip",
+    "time",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

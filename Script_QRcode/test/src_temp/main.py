@@ -1,4 +1,4 @@
-import random,pyqrcode,schedule
+import random,schedule
 import io
 import base64
 
@@ -20,6 +20,9 @@ def task():
   # HTML imgタグ用のデータ
   img_url=f"data:image/png;base64,{base64_qr}"
   print(img_url)# 実際に埋め込む対象のもの
+  output_div=docment.querySelector("#qr-code")
+  output_div.innerHTML=img_url
+
 
 # 6秒ごとにtaskを実行
 schedule.every(0.1).minutes.do(task)
