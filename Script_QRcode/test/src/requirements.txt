@@ -6,3 +6,4 @@ streamlit
 streamlit-option-menu
 streamlit
 streamlit-authenticator
+fastapi

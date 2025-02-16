@@ -30,15 +30,16 @@ timer_placeholder = st.empty()
 qr_code_html = generate_qr_code()
 qr_placeholder.markdown(qr_code_html, unsafe_allow_html=True)
 
+
 remit = 5
 for seconds in range(remit, 0, -1):
     # 毎回同じプレースホルダー（timer_placeholder）に上書きする
     timer_placeholder.write(f"QRコード更新まであと {seconds} 秒")
     time.sleep(1)
 
-# 0秒になったらページを再実行して、新しいQRコードを生成
-st.rerun()
 
+# 0秒になったらページを再実行して、新しいQRコードを生成(セッションステートに保持している変数リセット)
+st.rerun()
 # ボタンを押して強制的に再読み込み（リロール）したい場合
 if st.button("再読み込み"):
     st.rerun()

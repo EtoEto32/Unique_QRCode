@@ -1,0 +1,19 @@
+services:
+  - name: backend
+    type: web
+    env: docker
+    buildCommand: ""
+    startCommand: uvicorn app.backend:app --host 0.0.0.0 --port 8000
+    dockerfilepath: ./backend/Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+  - name: frontend
+    type: web
+    env: docker
+    buildCommand: ""
+    startCommand: streamlit run app/main.py --server.port=8501 --server.address=0.0.0.0
+    envVars:
+      - key: API_URL
+        value: http://backend.onrender.com
+    
